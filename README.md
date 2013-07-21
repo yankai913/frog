@@ -1,7 +1,7 @@
 frog
 ====
 
-a spring-mvc plugin, supported to list it`s RequestedMappings and test all the Actions.
+a springmvc plugin, supported to list it`s RequestedMappings and test all the Actions.
 
 usage:
 
@@ -16,7 +16,7 @@ eg: {"ilist":["/login2-{username}-[POST]","/login3[POST]","/login[GET]"]}
 4.request "http://ip:port/myproject/tracer-interface/list?post_tracer_path=/login[GET]" to view the method sgin. <br>
 eg: {"methodSign":"java.lang.String login1([] String username, [] String password)","paramNames":["username","password"]}
 
-5.post the "http://localhost/tracer-interface/invoke" to invoke action.
+5.post to "http://localhost/tracer-interface/invoke" to invoke action.
 
 <pre>
 public static void main(String[] args) throws Exception {
