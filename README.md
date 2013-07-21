@@ -7,17 +7,18 @@ usage:
 
 1.package it and put into a spring-mvc project, and javassist.jar is required, see pom.xml.
 
-2.add configuare something, add it`s package scan config.
-<context:component-scan base-package="xxx.xxx,com.zoo.frog"></context:component-scan>
+2.add to &lt;context:component-scan base-package="com.zoo.frog"/&gt;
 
-3.when the spring-mvc started, visit http://ip:port/myproject/tracer-interface/list, list requestmappings.
+
+3.when the spring-mvc started, visit "http://ip:port/myproject/tracer-interface/list" to list requestmappings.<br>
 eg: {"ilist":["/login2-{username}-[POST]","/login3[POST]","/login[GET]"]}
 
-4.view http://ip:port/myproject/tracer-interface/list?post_tracer_path=/login[GET], view the method sgin. 
+4.request "http://ip:port/myproject/tracer-interface/list?post_tracer_path=/login[GET]" to view the method sgin. <br>
 eg: {"methodSign":"java.lang.String login1([] String username, [] String password)","paramNames":["username","password"]}
 
-5.visit http://localhost/tracer-interface/invoke to invoke action.
+5.post the "http://localhost/tracer-interface/invoke" to invoke action.
 
+<pre>
 public static void main(String[] args) throws Exception {
 		String web = "http://localhost/myproject/tracer-interface/invoke";
 		URL url = new URL(web);
@@ -39,3 +40,4 @@ public static void main(String[] args) throws Exception {
 	}
 
 {"result":"test/login"}
+</pre>
